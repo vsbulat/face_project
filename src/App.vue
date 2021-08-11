@@ -1,30 +1,70 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div class="layout">
+      <app-header
+          :nav="nav"
+          :contacts="contacts"
+          :workingHours="workingHours"
+      />
+<!--      <router-view></router-view>-->
+    </div>
+
+  <app-footer
+      :nav="nav"
+      :contacts="contacts"
+      :workingHours="workingHours"
+  />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import "@/style/style.scss"
+import AppHeader from "@/components/shared/header/app-header";
+import AppFooter from "@/components/shared/footer/app-footer";
+import axios from "axios"
+export default {
+  components: {AppFooter, AppHeader},
+  data() {
+    return {
+      nav: [
+        {
+          link: '',
+          txt: 'Про нас'
+        },
+        {
+          link: '',
+          txt: 'Оплата і доставка'
+        },
+        {
+          link: '',
+          txt: 'Бренди'
+        },
+        {
+          link: '',
+          txt: 'Контакти'
+        }
+      ],
+      contacts: [],
+      workingHours: []
     }
+  },
+
+  methods: {
+    async fetchContacts() {
+      try {
+        const  contact = await axios.get('http://api.server347.com/13');
+        const  workingHours = await axios.get('http://api.server347.com/14');
+        this.contacts = contact.data;
+        this.workingHours = workingHours.data;
+      } catch (e) {
+        alert("Alert!!!")
+      }
+
+    }
+  },
+  mounted() {
+    this.fetchContacts();
   }
-}
-</style>
+};
+
+</script>
+<style></style>

@@ -1,0 +1,37 @@
+[
+  {
+    "type": "email",
+    "val": "mail@face.com",
+    "text": "mail@face.com"
+  },
+  {
+    "type": "phone",
+    "val": "+380680457899",
+    "text": " +38 (068) 04 - 57 - 899"
+  },
+  {
+    "type": "phone",
+    "val": "+380680457899",
+    "text": " +38 (068) 04 - 57 - 899"
+  },
+  {
+    "type": "phone",
+    "val": "+380680457899",
+    "text": " +38 (068) 04 - 57 - 899"
+  },
+  {
+    "type": "location",
+    "val": "",
+    "text": "г. Киев, ул. Петропавловская 4"
+  },
+  {
+    "type": "social",
+    "val": "#",
+    "text": "facebook"
+  },
+  {
+    "type": "social",
+    "val": "#",
+    "text": "instagram"
+  }
+]

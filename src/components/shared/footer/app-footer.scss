@@ -1,0 +1,11 @@
+@import "../../../style/variables";
+
+footer {
+  background-color: $bg;
+  padding: 25px 0 15px;
+  color: $white;
+
+  .logo {
+    margin-bottom: 15px;
+  }
+}
