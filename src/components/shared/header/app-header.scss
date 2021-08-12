@@ -19,6 +19,7 @@ header {
 
   .logo {
     margin-right: 60px;
+    margin-left: -3px;
   }
 
   .cont {
@@ -119,6 +120,14 @@ header {
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  a:hover {
+    ::v-deep svg {
+      path {
+        fill: $main;
+      }
     }
   }
 }
