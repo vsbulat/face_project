@@ -1,0 +1,21 @@
+@import "src/style/variables";
+
+.catalog {
+  display: flex;
+  justify-content: space-between;
+
+  .sidebar {
+    width: 335px;
+  }
+
+  .catalog-content {
+    width: calc(100% - 335px - 70px);
+  }
+
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-gap: 50px 30px;
+  }
+}
